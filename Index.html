@@ -19,7 +19,7 @@
 
 <!-- allows you to add or take away electrons-->
 <h3>Change # of electrons</h3>
-<h3>Currently there are 1 electrons</h3>
+<h3 id="electronamount">Currently there are 1 electrons</h3>
 <div class="button2" id="addelectron">Add electron</div>
 <div class="button1" id="removeelectron">Remove electron</div>
 
@@ -30,17 +30,20 @@
 <!-- javascript portion of code -->
 <script>
 electrons = 0;
-document.getElementById("button2").onclick = function addelectrons(){
+
+// I am sorry to all programmers but an array that is manually coded is the way to go here instead of a proper setup
+var models = ["bohr model hydrogen","bohr model helium","bohr model lithium","bohr model beryllium","bohr model boron",
+"bohr model carbon","bohr model nitrogen","bohr model oxygen","bohr model fluorine","bohr model neon","bohr model sodium",
+"bohr model magnesium","bohr model aluminium","bohr model silicon","bohr model phosphorous","bohr model sulfur",
+"bohr model chlorine","bohr model argon","bohr model potassium","bohr model calcium","bohr model scandium","bohr model Titanium",
+"bohr model vanadium","bohr model chromium","bohr model manganese","bohr model iron","bohr model copper","bohr model nickel",
+"bohr model zinc","bohr model gallium","bohr model germanium","bohr model arsenic","bohr model selenium","bohr model bromine",
+"bohr model krypton"
+]
+
+document.getElementById("button2").onclick = function(){
     electrons = electons + 1
-    // I am sorry to all programmers but an array that is manually coded is the way to go here instead of a proper setup
-    var models = ["bohr model hydrogen","bohr model helium","bohr model lithium","bohr model beryllium","bohr model boron",
-    "bohr model carbon","bohr model nitrogen","bohr model oxygen","bohr model fluorine","bohr model neon","bohr model sodium",
-    "bohr model magnesium","bohr model aluminium","bohr model silicon","bohr model phosphorous","bohr model sulfur",
-    "bohr model chlorine","bohr model argon","bohr model potassium","bohr model calcium","bohr model scandium","bohr model Titanium",
-    "bohr model vanadium","bohr model chromium","bohr model manganese","bohr model iron","bohr model copper","bohr model nickel",
-    "bohr model zinc","bohr model gallium","bohr model germanium","bohr model arsenic","bohr model selenium","bohr model bromine",
-    "bohr model krypton"
-    ]
+    document.getElementById("electronamount")
     document.getElementById("image").src = models[electrons];
 
  };
