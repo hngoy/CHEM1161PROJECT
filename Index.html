@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Hiannas Ngoy Bohr Model Simulation</title>
+<title>Hiannas Ngoy Bohr Models/bohr model Simulation</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -15,7 +15,7 @@
 <p>Current Electrons matches the Atom: hydrogen</p>
 
 <!-- Image of relevant bohr model-->
-<img src="Bohr Models/1st/bohr model hydrogen.png" alt="" width="200px" id="image">
+<img src="Bohr Models/bohr model hydrogen.png" alt="" width="200px" id="image">
 
 <!-- allows you to add or take away electrons-->
 <h3>Change # of electrons</h3>
@@ -26,32 +26,27 @@
 </center>
 
 
-
 <!-- javascript portion of code -->
 <script>
 electrons = 0;
 
 // I am sorry to all programmers but an array that is manually coded is the way to go here instead of a proper setup
-var models = ["bohr model hydrogen","bohr model helium","bohr model lithium","bohr model beryllium","bohr model boron",
-"bohr model carbon","bohr model nitrogen","bohr model oxygen","bohr model fluorine","bohr model neon","bohr model sodium",
-"bohr model magnesium","bohr model aluminium","bohr model silicon","bohr model phosphorous","bohr model sulfur",
-"bohr model chlorine","bohr model argon","bohr model potassium","bohr model calcium","bohr model scandium","bohr model Titanium",
-"bohr model vanadium","bohr model chromium","bohr model manganese","bohr model iron","bohr model copper","bohr model nickel",
-"bohr model zinc","bohr model gallium","bohr model germanium","bohr model arsenic","bohr model selenium","bohr model bromine",
-"bohr model krypton"
+var models = ["Bohr Models/bohr model hydrogen","Bohr Models/bohr model helium","Bohr Models/bohr model lithium","Bohr Models/bohr model beryllium","Bohr Models/bohr model boron",
+"Bohr Models/bohr model carbon","Bohr Models/bohr model nitrogen","Bohr Models/bohr model oxygen","Bohr Models/bohr model fluorine","Bohr Models/bohr model neon","Bohr Models/bohr model sodium",
+"Bohr Models/bohr model magnesium","Bohr Models/bohr model aluminium","Bohr Models/bohr model silicon","Bohr Models/bohr model phosphorous","Bohr Models/bohr model sulfur",
+"Bohr Models/bohr model chlorine","Bohr Models/bohr model argon","Bohr Models/bohr model potassium","Bohr Models/bohr model calcium","Bohr Models/bohr model scandium","Bohr Models/bohr model Titanium",
+"Bohr Models/bohr model vanadium","Bohr Models/bohr model chromium","Bohr Models/bohr model manganese","Bohr Models/bohr model iron","Bohr Models/bohr model copper","Bohr Models/bohr model nickel",
+"Bohr Models/bohr model zinc","Bohr Models/bohr model gallium","Bohr Models/bohr model germanium","Bohr Models/bohr model arsenic","Bohr Models/bohr model selenium","Bohr Models/bohr model bromine",
+"Bohr Models/bohr model krypton"
 ]
 
-document.getElementById("button2").onclick = function(){
+document.getElementById("button2").addEventListener("click", electronAddition) 
+function electronAddition(){
     electrons = electons + 1
     document.getElementById("electronamount")
     document.getElementById("image").src = models[electrons];
-
  };
 
-
-
-
 </script>
-
 </body>
 </html>
