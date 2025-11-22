@@ -23,6 +23,16 @@
 <div onclick="changeimage()" class="button2" id="addelectron">Add electron</div>
 <div onclick="reduceimage()"" class="button1" id="removeelectron">Remove electron</div>
 
+<br>
+<br>
+
+<form>
+  <label for="fname">Custom Electron Amount</label><br>
+  <input id="customelectron" type="text"><br>
+</form>
+<br>
+<div onclick="stormSet()" class="button3">Set electron amount</div>
+
 </center>
 
 
@@ -88,10 +98,21 @@ function reduceimage(){
     document.getElementById("electronics").textContent = "Currently there are " + (newValue + 1) + " electrons"
 }
 
-function stormSet(valuesome){
+function stormSet(){
     // electrons!!!
-    electrons = Number(localStorage.getItem("electron"));
-    newValue = electrons;
+    customcontent = Number(document.getElementById("customelectron").value);
+    console.log(customcontent);
+    if(customcontent < 1){
+        customcontent = 1;
+    }else{
+        if(customcontent > 36){
+            customcontent = 36;
+        }else{
+            customcontent = customcontent - 1;
+        }
+    }
+
+    valuesome = customcontent;
 
     names = ["hydrogen","helium","lithium","beryllium","boron","carbon","nitrogen","oxygen","fluorine","neon","sodium","magnesium",
     "aluminum","silicon","phosphorous","sulfur","chlorine","argon","potassium","calcium","scandium","titanium","vanadium",
