@@ -19,7 +19,7 @@
 
 <!-- allows you to add or take away electrons-->
 <h3>Change # of electrons</h3>
-<h3 id="electronamount">Currently there are 1 electrons</h3>
+<h3 id="electronics">Currently there are 1 electrons</h3>
 <div onclick="changeimage()" class="button2" id="addelectron">Add electron</div>
 <div onclick="reduceimage()"" class="button1" id="removeelectron">Remove electron</div>
 
@@ -49,6 +49,7 @@ function refresh(){
     document.getElementById("image").src = "Bohr Models/bohr model " + names[newValue] + ".png";
     localStorage.setItem("electron", String(newValue));
     document.getElementById("tag").textContent = "Current Electron Configuration matches the Atom: " + names[newValue]
+    document.getElementById("electronics").textContent = "Currently there are " + (newValue + 1) + " electrons"
 }
 
 function changeimage(){
@@ -66,6 +67,7 @@ function changeimage(){
     document.getElementById("image").src = "Bohr Models/bohr model " + names[newValue] + ".png";
     localStorage.setItem("electron", String(newValue));
     document.getElementById("tag").textContent = "Current Electron Configuration matches the Atom: " + names[newValue]
+    document.getElementById("electronics").textContent = "Currently there are " + (newValue + 1) + " electrons"
 }
 
 function reduceimage(){
@@ -83,6 +85,24 @@ function reduceimage(){
     document.getElementById("image").src = "Bohr Models/bohr model " + names[newValue] + ".png";
     localStorage.setItem("electron", String(newValue));
     document.getElementById("tag").textContent = "Current Electron Configuration matches the Atom: " + names[newValue]
+    document.getElementById("electronics").textContent = "Currently there are " + (newValue + 1) + " electrons"
+}
+
+function stormSet(valuesome){
+    // electrons!!!
+    electrons = Number(localStorage.getItem("electron"));
+    newValue = electrons;
+
+    names = ["hydrogen","helium","lithium","beryllium","boron","carbon","nitrogen","oxygen","fluorine","neon","sodium","magnesium",
+    "aluminum","silicon","phosphorous","sulfur","chlorine","argon","potassium","calcium","scandium","titanium","vanadium",
+    "chromium","manganese","iron","cobalt","nickel","copper","zinc","gallium","germanium","arsenic","selenium","bromine","krypton"
+    ]
+
+    document.getElementById("image").src = "Bohr Models/bohr model " + names[valuesome] + ".png";
+    localStorage.setItem("electron", String(valuesome));
+    document.getElementById("tag").textContent = "Current Electron Configuration matches the Atom: " + names[valuesome]
+    document.getElementById("electronics").textContent = "Currently there are " + (valuesome + 1) + " electrons"
+
 }
 </script>
 </body>
